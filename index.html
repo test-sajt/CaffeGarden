@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="sr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO & Meta Tags -->
+    <title>Caffe Garden Kragujevac | Kafa, Piće i Druženje u Centru Grada</title>
+    <meta name="description" content="Caffe Garden u srcu Kragujevca, u pešačkoj zoni. Uživajte u dobroj kafi, prijatnoj atmosferi i druženju. Kralja Petra I 18.">
+    <meta property="og:title" content="Caffe Garden Kragujevac">
+    <meta property="og:description" content="Uvek je pravo vreme za dobru kafu ☕️ Caffe Garden, Kralja Petra I 18, Kragujevac.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        garden: {
+                            dark: '#0a0908',
+                            espresso: '#141210',
+                            cream: '#f4f0ea',
+                            accent: '#2c3e2e',
+                            gold: '#c2a578'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-garden-dark text-garden-cream font-sans antialiased overflow-x-hidden selection:bg-garden-gold selection:text-garden-dark">
+
+    <!-- Custom Cursor (Desktop Only) -->
+    <div class="custom-cursor hidden lg:flex items-center justify-center pointer-events-none fixed top-0 left-0 z-[100] rounded-full mix-blend-difference transition-all duration-300 ease-out">
+        <span class="cursor-text text-[10px] tracking-widest font-medium opacity-0 transition-opacity duration-300"></span>
+    </div>
+
+    <!-- Premium Loader -->
+    <div class="loader-screen fixed inset-0 z-[200] bg-[#050404] flex flex-col items-center justify-center overflow-hidden">
+        <div class="ambient-glow absolute inset-0 opacity-0 pointer-events-none"></div>
+        
+        <div class="flex flex-col items-center justify-center relative z-10 w-full">
+            <div class="logo-image-wrapper relative mb-6 md:mb-10 flex justify-center items-center">
+                <div class="logo-glow absolute w-[150%] h-[150%] bg-garden-gold rounded-full blur-[50px] md:blur-[80px] opacity-0 scale-50 mix-blend-screen pointer-events-none"></div>
+                <img src="logo.jpg" alt="Garden Logo" class="logo-img relative z-10 w-48 md:w-72 h-auto object-contain opacity-0 drop-shadow-2xl">
+            </div>
+            
+            <div class="text-container flex flex-col items-center justify-center text-center">
+                <div class="caffe-text logo-shimmer-effect text-3xl md:text-4xl font-serif italic opacity-0 font-light">Caffe</div>
+                <div class="garden-text logo-shimmer-effect text-5xl md:text-8xl font-serif tracking-widest mt-1 md:mt-2 opacity-0">GARDEN</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-500 py-4 px-6 md:px-12 nav-container mix-blend-difference">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            
+            <a href="#hero" class="font-serif hover-magnetic flex items-baseline gap-1 md:gap-2 logo-shimmer-effect" data-cursor="none">
+                <span class="italic font-light text-xl md:text-2xl text-garden-cream/90">Caffe</span>
+                <span class="text-2xl md:text-3xl tracking-widest">GARDEN</span>
+            </a>
+            
+            <!-- DESKTOP MENU -->
+            <div class="hidden md:flex items-center gap-10 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="#about" class="nav-link text-garden-cream hover:text-garden-gold transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:bg-garden-gold after:transition-all after:duration-300 after:w-0 [&.active]:text-garden-gold [&.active]:after:w-full">O Nama</a>
+                <a href="#menu" class="nav-link text-garden-cream hover:text-garden-gold transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:bg-garden-gold after:transition-all after:duration-300 after:w-0 [&.active]:text-garden-gold [&.active]:after:w-full">Meni</a>
+                <a href="#gallery" class="nav-link text-garden-cream hover:text-garden-gold transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:bg-garden-gold after:transition-all after:duration-300 after:w-0 [&.active]:text-garden-gold [&.active]:after:w-full">Galerija</a>
+                <a href="#location" class="nav-link text-garden-cream hover:text-garden-gold transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:bg-garden-gold after:transition-all after:duration-300 after:w-0 [&.active]:text-garden-gold [&.active]:after:w-full">Lokacija</a>
+            </div>
+            
+            <!-- DESKTOP CTA & SOCIAL -->
+            <div class="hidden md:flex items-center gap-5">
+                <a href="tel:+381654221640" class="border border-garden-cream/30 px-6 py-2.5 rounded-full text-xs uppercase tracking-widest hover-magnetic hover:bg-garden-gold hover:border-garden-gold hover:text-garden-dark transition-all duration-300" data-cursor="none">
+                    Rezervacija
+                </a>
+                <div class="flex items-center gap-3 pl-5 border-l border-garden-cream/20">
+                    <a href="https://www.instagram.com/caffe__garden/" target="_blank" class="text-garden-cream/80 hover:text-garden-gold transition-colors hover-magnetic" data-cursor="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.facebook.com/p/Caffe-Garden-61555868320483/" target="_blank" class="text-garden-cream/80 hover:text-garden-gold transition-colors hover-magnetic" data-cursor="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 z-[60] mobile-menu-btn relative">
+                <span class="line-1 w-6 h-[1.5px] bg-garden-cream transition-all duration-300 block origin-center"></span>
+                <span class="line-2 w-6 h-[1.5px] bg-garden-cream transition-all duration-300 block origin-center"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- LUXURY MOBILE MENU OVERLAY -->
+    <div class="mobile-menu fixed inset-0 bg-garden-dark/80 backdrop-blur-3xl z-[55] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
+        <!-- Zlatni okvir i pozadinski sjaj -->
+        <div class="absolute inset-4 border border-garden-gold/10 rounded-2xl pointer-events-none"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-garden-gold/5 via-garden-dark/0 to-garden-dark/0 pointer-events-none"></div>
+        
+        <div class="text-garden-gold text-[10px] tracking-[0.4em] uppercase mb-10 menu-item-anim opacity-0 translate-y-4">Meni</div>
+        
+        <!-- Elegantni linkovi sa premium active efektima -->
+        <div class="flex flex-col items-center w-full px-12">
+            <a href="#about" class="mobile-nav-link w-full text-center text-3xl font-serif text-garden-cream hover:text-garden-gold transition-all duration-300 menu-item-anim opacity-0 translate-y-4 border-b border-garden-cream/5 py-5 [&.active]:text-garden-gold [&.active]:scale-110 [&.active]:drop-shadow-[0_0_15px_rgba(194,165,120,0.4)]">O Nama</a>
+            <a href="#menu" class="mobile-nav-link w-full text-center text-3xl font-serif text-garden-cream hover:text-garden-gold transition-all duration-300 menu-item-anim opacity-0 translate-y-4 border-b border-garden-cream/5 py-5 [&.active]:text-garden-gold [&.active]:scale-110 [&.active]:drop-shadow-[0_0_15px_rgba(194,165,120,0.4)]">Digitalni Meni</a>
+            <a href="#gallery" class="mobile-nav-link w-full text-center text-3xl font-serif text-garden-cream hover:text-garden-gold transition-all duration-300 menu-item-anim opacity-0 translate-y-4 border-b border-garden-cream/5 py-5 [&.active]:text-garden-gold [&.active]:scale-110 [&.active]:drop-shadow-[0_0_15px_rgba(194,165,120,0.4)]">Galerija</a>
+            <a href="#location" class="mobile-nav-link w-full text-center text-3xl font-serif text-garden-cream hover:text-garden-gold transition-all duration-300 menu-item-anim opacity-0 translate-y-4 py-5 [&.active]:text-garden-gold [&.active]:scale-110 [&.active]:drop-shadow-[0_0_15px_rgba(194,165,120,0.4)]">Lokacija</a>
+        </div>
+        
+        <div class="mt-12 flex flex-col items-center gap-6 menu-item-anim opacity-0 translate-y-4">
+            <a href="tel:+381654221640" class="btn-primary bg-garden-gold text-garden-dark px-10 py-4 rounded-full text-xs font-semibold uppercase tracking-widest shadow-[0_0_20px_rgba(194,165,120,0.15)]">
+                Pozovi / Rezerviši
+            </a>
+            
+            <div class="flex items-center gap-8 border-t border-garden-cream/10 pt-6 mt-2 w-full justify-center">
+                <a href="https://www.instagram.com/caffe__garden/" target="_blank" class="flex flex-col items-center gap-2 text-garden-cream/50 hover:text-garden-gold transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <span class="text-[9px] uppercase tracking-[0.2em]">Instagram</span>
+                </a>
+                <a href="https://www.facebook.com/p/Caffe-Garden-61555868320483/" target="_blank" class="flex flex-col items-center gap-2 text-garden-cream/50 hover:text-garden-gold transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    <span class="text-[9px] uppercase tracking-[0.2em]">Facebook</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+            
+            <section id="hero" class="relative h-[100svh] w-full overflow-hidden flex items-center justify-center">
+                <div class="hero-image-wrap absolute inset-0 w-full h-full">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-garden-dark z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2500&auto=format&fit=crop" alt="Caffe Garden Atmosfera" class="hero-image w-full h-full object-cover origin-center scale-110">
+                </div>
+                
+                <div class="relative z-20 text-center px-4 w-full max-w-5xl mx-auto mt-16 md:mt-24">
+                    <p class="hero-subtitle text-[10px] md:text-xs tracking-[0.4em] uppercase text-garden-gold mb-6 md:mb-8 overflow-hidden font-semibold">
+                        <span class="block translate-y-full">Caffe Garden — Kragujevac</span>
+                    </p>
+                    <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-10 text-white">
+                        <div class="line overflow-hidden"><span class="block translate-y-full">Uvek je pravo vreme</span></div>
+                        <div class="line overflow-hidden"><span class="block translate-y-full italic text-garden-gold">za dobru kafu.</span></div>
+                    </h1>
+                    
+                    <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 mt-8">
+                        <a href="#menu" class="w-full sm:w-auto hover-magnetic inline-flex justify-center items-center gap-2 bg-garden-gold text-garden-dark px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold transition-all duration-300 hover:bg-white hover:scale-105" data-cursor="none">
+                            Pogledaj Meni
+                        </a>
+                        <a href="tel:+381654221640" class="w-full sm:w-auto hover-magnetic inline-flex justify-center items-center gap-2 border border-garden-cream/30 backdrop-blur-sm px-8 py-4 rounded-full text-xs uppercase tracking-widest hover:bg-garden-cream/10 transition-colors" data-cursor="none">
+                            Rezerviši Sto
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3 scroll-indicator">
+                    <span class="text-[9px] tracking-[0.3em] uppercase text-garden-cream/40">Skroluj dole</span>
+                    <div class="w-px h-16 bg-garden-cream/10 relative overflow-hidden">
+                        <div class="w-full h-full bg-garden-gold absolute top-0 left-0 scroll-line"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="py-24 md:py-40 px-6 relative bg-garden-dark">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight text-reveal-wrap text-garden-cream/90">
+                        U samom srcu Kragujevca, u pešačkoj zoni, <span class="text-garden-gold italic">Garden</span> je mesto za jutarnju kafu, spontani susret, popodnevni predah i večernje druženje.
+                    </h2>
+                </div>
+            </section>
+
+            <section id="menu" class="py-20 md:py-32 relative z-20 bg-garden-espresso">
+                <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-garden-dark to-transparent"></div>
+                
+                <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+                    <div class="text-center mb-12 md:mb-20">
+                        <span class="text-garden-gold text-[10px] md:text-xs tracking-[0.3em] uppercase block mb-4 font-semibold">Premium Ponuda</span>
+                        <h2 class="text-4xl md:text-6xl font-serif">Naš Meni.</h2>
+                    </div>
+                    
+                    <div class="sticky top-[70px] md:top-[88px] z-40 bg-garden-espresso/90 backdrop-blur-xl border-b border-garden-cream/5 py-4 -mx-4 px-4 md:mx-0 md:px-0 mb-8 md:mb-12">
+                        <div id="category-filters" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-2 md:gap-4 md:flex-wrap md:justify-center">
+                        </div>
+                    </div>
+
+                    <div id="menu-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-8 min-h-[50vh]">
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery" class="py-24 md:py-32 bg-garden-dark relative z-20 overflow-hidden">
+                <div class="px-6 mb-12 md:mb-16 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                    <div>
+                        <span class="text-garden-gold text-[10px] tracking-[0.3em] uppercase block mb-3 font-semibold">Enterijer & Bašta</span>
+                        <h2 class="text-4xl md:text-6xl font-serif">Atmosfera.</h2>
+                    </div>
+                    <a href="https://www.instagram.com/caffe__garden/" target="_blank" class="text-[10px] tracking-widest uppercase border-b border-garden-gold text-garden-gold pb-1 hover:text-white hover:border-white transition-colors hover-magnetic" data-cursor="Instagram">Više na Instagramu</a>
+                </div>
+                
+                <div class="gallery-wrapper grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 px-4 md:px-6 max-w-7xl mx-auto h-auto relative">
+                    
+                    <!-- Column 1 -->
+                    <div class="flex flex-col gap-4 md:gap-6 gallery-col gallery-col-1">
+                        <div class="overflow-hidden rounded-xl cursor-view relative group" data-cursor="VIEW">
+                            <img src="1/2.jpg" loading="lazy" class="w-full h-[400px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" alt="Kafa slika 1">
+                            <div class="absolute inset-0 bg-garden-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        <div class="overflow-hidden rounded-xl cursor-view relative group" data-cursor="VIEW">
+                            <img src="1/3.jpg" loading="lazy" class="w-full h-[350px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" alt="Bašta">
+                            <div class="absolute inset-0 bg-garden-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        <div class="overflow-hidden rounded-xl cursor-view relative group" data-cursor="VIEW">
+                            <video src="2.mp4" autoplay loop muted playsinline webkit-playsinline preload="auto" class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"></video>
+                            <div class="absolute inset-0 bg-garden-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 2 -->
+                    <div class="flex flex-col gap-4 md:gap-6 gallery-col gallery-col-2 md:pt-24">
+                        <div class="overflow-hidden rounded-xl cursor-view relative group" data-cursor="VIEW">
+                            <img src="1/1.jpg" loading="lazy" class="w-full h-[400px] md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105" alt="Druženje">
+                            <div class="absolute inset-0 bg-garden-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        <div class="hidden md:block overflow-hidden rounded-xl cursor-view relative group" data-cursor="VIEW">
+                            <img src="1/4.jpg" loading="lazy" class="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-105" alt="Detalj">
+                            <div class="absolute inset-0 bg-garden-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        <div class="overflow-hidden rounded-xl cursor-view relative group" data-cursor="VIEW">
+                            <video src="3.mp4" autoplay loop muted playsinline webkit-playsinline preload="auto" class="w-full h-[550px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"></video>
+                            <div class="absolute inset-0 bg-garden-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 3 -->
+                    <div class="flex flex-col gap-4 md:gap-6 gallery-col gallery-col-3 md:pt-12">
+                        <div class="overflow-hidden rounded-xl cursor-view relative group" data-cursor="VIEW">
+                            <video src="1.mp4" autoplay loop muted playsinline webkit-playsinline preload="auto" class="w-full h-[300px] md:h-[350px] object-cover transition-transform duration-700 group-hover:scale-105"></video>
+                            <div class="absolute inset-0 bg-garden-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        <div class="overflow-hidden rounded-xl cursor-view relative group" data-cursor="VIEW">
+                            <img src="1/5.jpg" loading="lazy" class="w-full h-[450px] md:h-[550px] object-cover transition-transform duration-700 group-hover:scale-105" alt="Espresso">
+                            <div class="absolute inset-0 bg-garden-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="location" class="py-24 md:py-32 px-4 md:px-6 bg-garden-dark relative z-20 border-t border-garden-cream/5">
+                <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24">
+                    
+                    <div class="flex-1 location-text flex flex-col justify-center">
+                        <span class="text-garden-gold text-[10px] tracking-[0.3em] uppercase block mb-4 font-semibold">Posetite nas</span>
+                        <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight">Pronađi nas u centru Kragujevca.</h2>
+                        <div class="mb-10">
+                            <p class="text-lg md:text-xl text-garden-cream/90 mb-1">Kralja Petra I 18</p>
+                            <p class="text-lg md:text-xl text-garden-cream/70 mb-4">34000 Kragujevac, Srbija</p>
+                            <p class="text-[10px] md:text-xs text-garden-gold tracking-widest uppercase flex items-center gap-2 mt-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                Pešačka zona
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <a href="https://maps.app.goo.gl/jb5T3RsMMT2iYey39" target="_blank" class="inline-block border border-garden-gold text-garden-gold px-8 py-4 rounded-full text-xs uppercase tracking-widest font-semibold hover-magnetic hover:bg-garden-gold hover:text-garden-dark transition-all duration-300" data-cursor="none">
+                                Otvori Google Maps
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-1 bg-garden-espresso border border-garden-cream/5 p-6 md:p-10 rounded-2xl location-card shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-garden-gold/5 rounded-full blur-3xl"></div>
+                        
+                        <div class="flex justify-between items-end mb-8 border-b border-garden-cream/10 pb-4 relative z-10">
+                            <h3 class="text-2xl font-serif">Radno Vreme</h3>
+                            <div id="status-badge" class="flex items-center gap-2 text-[10px] font-semibold tracking-wider px-3 py-1.5 rounded-full border">
+                                <span class="w-1.5 h-1.5 rounded-full status-dot"></span>
+                                <span class="status-text uppercase">Učitavanje</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-4 text-sm font-light tracking-wide relative z-10" id="hours-list">
+                            <li class="flex justify-between pb-3 border-b border-garden-cream/5" data-day="1"><span>Ponedeljak</span> <span>08:00 – 00:00</span></li>
+                            <li class="flex justify-between pb-3 border-b border-garden-cream/5" data-day="2"><span>Utorak</span> <span>08:00 – 00:00</span></li>
+                            <li class="flex justify-between pb-3 border-b border-garden-cream/5" data-day="3"><span>Sreda</span> <span>08:00 – 00:00</span></li>
+                            <li class="flex justify-between pb-3 border-b border-garden-cream/5" data-day="4"><span>Četvrtak</span> <span>08:00 – 00:00</span></li>
+                            <li class="flex justify-between pb-3 border-b border-garden-cream/5" data-day="5"><span>Petak</span> <span>08:00 – 01:00</span></li>
+                            <li class="flex justify-between pb-3 border-b border-garden-cream/5" data-day="6"><span>Subota</span> <span>08:00 – 01:00</span></li>
+                            <li class="flex justify-between pb-2" data-day="0"><span>Nedelja</span> <span>08:00 – 00:00</span></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <section class="relative h-[60vh] md:h-[80vh] w-full flex items-center justify-center overflow-hidden cta-section z-10">
+                <div class="absolute inset-0 bg-garden-dark"></div>
+                <img src="https://images.unsplash.com/photo-1515515257326-787bc9db5d8b?q=80&w=2000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20 cta-bg scale-110" alt="Veče u Gardenu">
+                
+                <div class="relative z-20 text-center px-4">
+                    <h2 class="text-4xl md:text-6xl lg:text-8xl font-serif mb-6 text-white">Vidimo se u Gardenu.</h2>
+                    <p class="text-garden-cream/70 text-base md:text-xl mb-10 font-light">Rezerviši svoj sto za savršeno veče.</p>
+                    
+                    <a href="tel:+381654221640" class="btn-primary hover-magnetic inline-flex items-center gap-3 bg-garden-gold text-garden-dark px-8 md:px-10 py-4 md:py-5 rounded-full text-xs md:text-sm uppercase tracking-widest font-bold hover:bg-white transition-colors group shadow-[0_0_30px_rgba(194,165,120,0.3)]" data-cursor="none">
+                        Pozovi +381 65 422 1640
+                        <svg class="transition-transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="bg-garden-dark text-garden-cream pt-20 md:pt-24 pb-8 md:pb-12 px-6 border-t border-garden-cream/5 sticky bottom-0 -z-10 w-full md:h-[60vh] flex flex-col justify-between">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-12 text-sm font-light">
+            <div>
+                <h4 class="text-3xl font-serif mb-4 tracking-widest text-garden-gold">GARDEN</h4>
+                <p class="text-garden-cream/60 mb-2 max-w-xs">„Uvek je pravo vreme za dobru kafu ☕️“</p>
+                
+                <!-- FOOTER SOCIAL LINKS -->
+                <div class="flex flex-wrap gap-3 mt-8">
+                    <a href="https://www.instagram.com/caffe__garden/" target="_blank" class="flex items-center gap-2 text-[10px] md:text-xs uppercase tracking-widest border border-garden-cream/20 px-5 py-2.5 rounded-full hover:border-garden-gold hover:text-garden-gold transition-colors hover-magnetic" data-cursor="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        Instagram
+                    </a>
+                    <a href="https://www.facebook.com/p/Caffe-Garden-61555868320483/" target="_blank" class="flex items-center gap-2 text-[10px] md:text-xs uppercase tracking-widest border border-garden-cream/20 px-5 py-2.5 rounded-full hover:border-garden-gold hover:text-garden-gold transition-colors hover-magnetic" data-cursor="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        Facebook
+                    </a>
+                </div>
+                
+            </div>
+            
+            <div>
+                <h5 class="text-[10px] uppercase tracking-[0.3em] text-garden-gold mb-6 font-semibold">Lokacija</h5>
+                <p class="mb-1 text-garden-cream/80">Kralja Petra I 18</p>
+                <p class="mb-6 text-garden-cream/80">34000 Kragujevac, Srbija</p>
+                <a href="https://maps.app.goo.gl/jb5T3RsMMT2iYey39" target="_blank" class="text-xs uppercase tracking-widest border-b border-garden-cream/30 pb-1 hover:text-garden-gold hover:border-garden-gold transition-colors">Google Maps</a>
+            </div>
+            
+            <div>
+                <h5 class="text-[10px] uppercase tracking-[0.3em] text-garden-gold mb-6 font-semibold">Kontakt</h5>
+                <p class="mb-6 text-lg"><a href="tel:+381654221640" class="hover:text-garden-gold transition-colors font-serif italic">+381 65 422 1640</a></p>
+                <p class="text-garden-cream/50 text-xs leading-relaxed">Radno vreme:<br>Pon - Čet: 08:00 - 00:00<br>Pet - Sub: 08:00 - 01:00<br>Ned: 08:00 - 00:00</p>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto w-full mt-16 md:mt-auto pt-8 border-t border-garden-cream/5 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-garden-cream/40 gap-4 md:gap-0">
+            <p>© 2026 Caffe Garden Kragujevac.</p>
+            <p>Sva prava zadržana.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox for Gallery -->
+    <div id="lightbox" class="fixed inset-0 z-[150] bg-garden-dark/95 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500 backdrop-blur-xl">
+        <button id="close-lightbox" class="absolute top-6 right-6 md:top-10 md:right-10 text-white/50 hover:text-garden-gold transition-colors z-50 p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <img id="lightbox-img" src="" alt="Gallery Image" class="max-w-[95vw] max-h-[90vh] object-contain scale-95 transition-transform duration-700 shadow-2xl rounded-sm">
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
